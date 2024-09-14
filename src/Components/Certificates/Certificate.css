@@ -1,0 +1,34 @@
+.section {
+  padding: 60px 0;
+
+}
+
+.top-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.top-header h1 {
+  font-size: 3.5rem;
+  color: white;
+}
+
+.certificates-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.certificates-card img {
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.certificates-card img:hover {
+  transform: scale(1.55);
+  cursor: pointer;
+}

@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+
+
+}
+
+body{
+  height: 100vh;
+  /* background-color: rgb(5, 5, 5);
+  color: black; */
+  background: #000000;
+  color: white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
