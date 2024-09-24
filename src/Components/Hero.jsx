@@ -6,7 +6,7 @@ import { IoBag } from "react-icons/io5";
 import phutu from '../../src/assets/phutu.jpg';
 
 const downloadfile = () => {
-  window.location.href = "https://drive.google.com/file/d/11u73KvDgAJAF9i9dE1S5GtxCvyu7gcq-/view?usp=sharing";
+  window.location.href = "https://drive.google.com/file/d/1hzp9a8UdkzqM1mqOJLJpXM9XvqO-l9yH/view?usp=sharing";
 };
 
 const Hero = () => {

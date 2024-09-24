@@ -1,8 +1,10 @@
+/* Section Styling */
 .section {
-  padding: 60px 0;
-
+  padding: 60px 20px;
+  background-color: black;
 }
 
+/* Header Styling */
 .top-header {
   text-align: center;
   margin-bottom: 40px;
@@ -13,22 +15,99 @@
   color: white;
 }
 
+/* Certificate Cards Container */
 .certificates-card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid; /* Changed to grid for better responsiveness */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
   gap: 20px;
 }
 
-.certificates-card img {
-  width: 250px; /* Adjust size as needed */
-  height: auto;
-  border-radius: 8px;
+/* Individual Certificate Card */
+.certificate-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+/* Card Image */
+.certificate-card img {
+  width: 100%;
+  height: auto;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.certificates-card img:hover {
-  transform: scale(1.55);
-  cursor: pointer;
+/* Certificate Information */
+.certificate-info {
+  padding: 20px;
+}
+
+.certificate-info p {
+  font-size: 16px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.certificate-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(270deg, #df8908 80%, #b415ff 100.2%);
+  color: black;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.certificate-link:hover {
+  background-color: #0056b3;
+}
+
+/* Hover Effect */
+.certificate-card:hover {
+  transform: rotate(5deg);
+}
+
+.certificate-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-header h1 {
+    font-size: 55px;
+    white-space: nowrap;
+    margin-left: 150px;
+  
+  }
+
+  /* .certificate-card {
+    padding: 10px; /* Adjust padding for smaller screens */
+    /* grid-template-columns: repeat(2, 1fr); Two columns for medium screens */
+  
+  /* } */ 
+  /* Certificate Cards Container */
+.certificates-card {
+  padding-top: 2rem;
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+  gap: 20px; /* Space between certificates */
+  width: 700px;
+  margin-left: 10px;
+}
+
+}
+
+@media (max-width: 576px) {
+  .certificate-info p {
+    font-size: 14px;
+  }
+
+  .certificate-link {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
 }

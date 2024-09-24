@@ -133,3 +133,44 @@ button.contact-submit:hover {
   height: 20px;
   width: 50px;
 }
+@media (max-width: 768px) {
+  .contact {
+    margin: 35px 30px; /* Adjust margins for mobile */
+  }
+
+  .contact-title {
+    text-align: center; /* Center the title */
+    margin-left: 34px;
+  }
+
+  .contact-title h1 {
+    font-size: 63px; /* Reduce font size for mobile */
+    white-space: nowrap; /* Prevent wrapping */
+    margin-left: 313px;
+  }
+
+  .contact-section {
+    flex-direction:row ;/* Stack sections vertically */
+    margin-left: -4px;
+  }
+  input,
+  textarea {
+    padding: 7px; /* Increase padding for touch targets */
+    border-radius: 4px; /* Keep consistent border radius */
+    border: 1px solid #ccc; /* Maintain border styling */
+    background-color: #333; /* Background color */
+    color: #d8d8d8; /* Text color */
+    width: 160px;
+  }
+  
+
+
+
+  .top {
+    margin: 0; /* Remove margin for mobile */
+    position: fixed; /* Fix position for easy access */
+    bottom: 20px; /* Position at bottom */
+    right: 20px; /* Position to the right */
+  }
+}
+
