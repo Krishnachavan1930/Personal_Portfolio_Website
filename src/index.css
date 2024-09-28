@@ -1,17 +1,35 @@
-*{
+* {
   margin: 0;
   padding: 0;
-
-
+  box-sizing: border-box; /* Added box-sizing for better sizing control */
 }
 
-body{
-  height: 100vh;
-  /* background-color: rgb(5, 5, 5);
-  color: black; */
-  background: #000000;
-  color: white;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  height: 100vh; /* Full viewport height */
+  background-color: #000000; /* Black background */
+  color: white; /* White text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font stack */
+  line-height: 1.6; /* Improved readability with line-height */
+}
 
+/* Optional: Add styles for better user experience */
+a {
+  color: #df8908; /* Link color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
 
+a:hover {
+  color: #b415ff; /* Change link color on hover */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem; /* Space between headings */
+}
+
+/* Optional: Adding a container to center content */
+.container {
+  max-width: 1200px; /* Maximum width for larger screens */
+  margin: 0 auto; /* Center content */
+  padding: 20px; /* Padding inside the container */
 }

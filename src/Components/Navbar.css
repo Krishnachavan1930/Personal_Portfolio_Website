@@ -1,18 +1,17 @@
-.Navbar{
+.Navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 20px 170px;
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.1s ease; /* Smooth transition */
-
 }
 
-.Navbar ul li{
+.Navbar ul li {
   font-weight: 600;
-  
 }
-.nav-menu{
+
+.nav-menu {
   display: flex;
   align-items: center;
   list-style: none;
@@ -20,77 +19,72 @@
   font-size: 20px;
 }
 
-.nav-Connect{
+.nav-Connect {
   padding: 20px 40px;
   border-radius: 50px;
-  background-color:white ;
-  /* background: transparent; */
+  background-color: white;
   border: 3px solid rgb(159, 160, 159);
   color: black;
-  /* background: linear-gradient(267deg,#DA7C25 0.36%,#B923E1 102.06%); */
   font-size: 22px;
   cursor: pointer;
   transition: 0.5s;
-
 }
 
-.nav-Connect:hover{
-transform: scale(1.05);
+.nav-Connect:hover {
+  transform: scale(1.05);
 }
 
-.nav-mob-close{
-  display: none;
-}
-.nav-mob-open{
+.nav-mob-close {
   display: none;
 }
 
-@media(max-width: 768px){
-  .Navbar{
+.nav-mob-open {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .Navbar {
     margin: 20px 50px;
   }
-nav: .Connect{
-  display: none;
 
-}
-.nav-mob-open{
-  display: block;
-  position: fixed;
-  right: 30px;
-}
+  /* Fixed the incorrect "nav: .Connect" selector */
+  .nav-Connect {
+    display: none;
+  }
 
-.nav-mob-close{
-  display: block;
-  position: relative;
- top: 30px;
- left: 290px;
- width: 30px;
+  .nav-mob-open {
+    display: block;
+    position: fixed;
+    right: 30px;
+    top: 30px; /* Add positioning for better appearance */
+  }
 
+  .nav-mob-close {
+    display: block;
+    position: fixed; /* Changed to fixed for correct positioning */
+    top: 30px;
+    left: 290px;
+    width: 30px;
+  }
 
-}
+  .nav-menu {
+    position: fixed;
+    align-items: start;
+    flex-direction: column;
+    gap: 30px;
+    width: 350px;
+    top: 0;
+    background: #1f0016;
+    height: 100%;
+    z-index: 2;
+    transition: right 0.5s;
+    right: -350px;
+  }
 
-.nav-menu{
-  position: fixed;
-  align-items: start;
-  flex-direction: column;
-  gap: 30px;
-  width: 350px;
-  top: 0;
-  background: #1f0016;
-  height: 100%;
-  z-index: 2;
-transition: right 0.5s;
-right: -350px;
-
-
-}
-.nav-menu li{
-  font-size: 30px;
-  padding-left: 100px;
-  flex-direction: row;
-  gap: 20px;
-
-}
-.nav-Connect{
-  display: none;
+  .nav-menu li {
+    font-size: 30px;
+    padding-left: 100px;
+    flex-direction: row;
+    gap: 20px;
+  }
 }

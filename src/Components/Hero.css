@@ -16,7 +16,7 @@
   /* background: linear-gradient(270deg, #DF8908 50%, #B415FF 100.5%); */
   /* background-clip: text; */
   /* -webkit-background-clip: text; */
- /* -webkit-text-fill-color: transparent;  */
+  /* -webkit-text-fill-color: transparent;  */
 }
 .phutu{
   display: none;
@@ -31,7 +31,6 @@
   height: 100vh;
   filter: drop-shadow(10px 10px 10px  rgb(16, 23, 14));
 }
-
 
 .icon {
   margin-right: 13px; /* Adjust the margin to control space between icon and text */
@@ -72,16 +71,13 @@
   cursor: pointer;
   display: flex;
   /* background: linear-gradient(270deg, #DF8908 50%, #B415FF 100.5%); */
-background-color: whitesmoke;  /* background-clip: text;
-  -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;  */
+  background-color: whitesmoke;
 }
 
 .but {
   display: flex;
   gap: 9px;
 }
-
 
 @media (max-width: 768px) {
   .bg {
@@ -124,17 +120,16 @@ background-color: whitesmoke;  /* background-clip: text;
   .introPara {
     font-size: 2rem;
     margin-top: 1rem;
-    
   }
 
   .btn {
-  background: white;
+    background: white;
     font-size: 2rem;
     color: black;
     border-radius: 2rem;
     align-items: center;
     font-weight: 700;
-    height: 4.5rem; */
+    /* height: 4.5rem; */
     margin-top: 2rem;
     white-space: nowrap;
     margin: 1rem 0;
@@ -143,7 +138,7 @@ background-color: whitesmoke;  /* background-clip: text;
     display: flex;
     gap: 9px;
   }
-  .phutu{
+  .phutu {
     display: block;
     height: 50vh;
     width: 50vh;
@@ -153,102 +148,7 @@ background-color: whitesmoke;  /* background-clip: text;
     border-radius: 52px;
   }
 
- .icon {
+  .icon {
     margin-right: 13px; /* Adjust the margin to control space between icon and text */
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Media queries */
-/* @media (max-width: 768px) {
-  #intro {
-    height: calc(100vh - 4rem);
-    max-width: 100vw;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .intro-content {
-    height: auto;
-    width: 90%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-  .hello {
-    font-size: 1.5rem;
-  }
-  .introName {
-    font-size: 2rem;
-  }
-  .introPara {
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-  .btn {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-  .bg {
-    position: relative;
-    height: auto;
-    width: 100%;
-    top: 0;
-    object-fit: cover;
-  }
-} */
