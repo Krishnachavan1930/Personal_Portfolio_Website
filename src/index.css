@@ -6,8 +6,8 @@
 
 body {
   height: 100vh; /* Full viewport height */
-  background-color: #000000; /* Black background */
-  color: white; /* White text */
+  background-color: White; /* Black background */
+  color: Black; /* White text */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent font stack */
   line-height: 1.6; /* Improved readability with line-height */
 }

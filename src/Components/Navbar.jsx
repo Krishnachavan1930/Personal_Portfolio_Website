@@ -1,57 +1,60 @@
-import React, { useRef } from "react";
-import "./Navbar.css";
-import logo from "../../src/assets/logo.png";
+import React, { useRef, useCallback, useState } from "react";
 import menu_open from "../assets/menu.png";
 import menu_close from "../assets/close.png";
+import './Navbar.css'; // Import the CSS file
 
 const Navbar = ({ heroRef, aboutRef, projectsRef, certiRef, contactRef }) => {
   const menuRef = useRef();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const openMenu = () => {
-    menuRef.current.style.right = "0";
-  };
+  const openMenu = useCallback(() => {
+    setMenuOpen(true);
+  }, []);
 
-  const closeMenu = () => {
-    menuRef.current.style.right = "-350px";
-  };
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+  }, []);
 
-  // Function to scroll to the section
-  const scrollHandler = (elmRef) => {
+  const scrollHandler = useCallback((elmRef) => {
     window.scrollTo({
       top: elmRef.current.offsetTop,
       behavior: "smooth",
     });
-    closeMenu(); // Optionally close the mobile menu after scrolling
-  };
+    closeMenu();
+  }, [closeMenu]);
 
+  const handleConnectClick = useCallback(() => {
+    window.open("https://www.linkedin.com/in/krishna-chavan-882516249/", "_blank", "noopener,noreferrer");
+  }, []);
 
   return (
-    <div className="Navbar">
-      <img src={logo} alt="Logo" height={100} />
-      <img
-        src={menu_open}
-        alt="Open Menu"
+    <nav className="Navbar">
+      <h1 className="navbar-logo">Krishna</h1>
+      <button
+        aria-label="Open Menu"
         className="nav-mob-open"
         onClick={openMenu}
-      />
-      <ul ref={menuRef} className="nav-menu">
-        <img
-          src={menu_close}
-          alt="Close Menu"
+      >
+        <img src={menu_open} alt="Open Menu" />
+      </button>
+      <ul ref={menuRef} className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+        <button
+          aria-label="Close Menu"
           className="nav-mob-close"
           onClick={closeMenu}
-        />
-        <li onClick={() => scrollHandler(heroRef)}>Home</li>
-        <li onClick={() => scrollHandler(aboutRef)}>About Me</li>
-        <li onClick={() => scrollHandler(projectsRef)}>Projects</li>
-        <li onClick={() => scrollHandler(certiRef)}>Certificates</li>
-        <li onClick={() => scrollHandler(contactRef)}>Contact</li>
-
+        >
+          <img src={menu_close} alt="Close Menu" />
+        </button>
+        <li><button onClick={() => scrollHandler(heroRef)}>Home</button></li>
+        <li><button onClick={() => scrollHandler(aboutRef)}>About Me</button></li>
+        <li><button onClick={() => scrollHandler(projectsRef)}>Projects</button></li>
+        <li><button onClick={() => scrollHandler(certiRef)}>Certificates</button></li>
+        <li><button onClick={() => scrollHandler(contactRef)}>Contact</button></li>
       </ul>
       <div className="nav-Connect">
-        <b onClick={() => window.open("https://www.linkedin.com/in/krishna-chavan-882516249/")}>Connect With Me</b>
+        <button onClick={handleConnectClick}>Connect With Me</button>
       </div>
-    </div>
+    </nav>
   );
 };
 

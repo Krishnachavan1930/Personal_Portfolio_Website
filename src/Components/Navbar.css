@@ -4,11 +4,14 @@
   justify-content: space-between;
   margin: 20px 170px;
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease; /* Smooth transition */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-.Navbar ul li {
-  font-weight: 600;
+.navbar-logo {
+  font-size: 36px;
+  font-weight: bold;
+  color: Black;
+  font-family: 'Arial', sans-serif;
 }
 
 .nav-menu {
@@ -17,54 +20,87 @@
   list-style: none;
   gap: 60px;
   font-size: 20px;
+  transition: right 0.5s;
+}
+
+.nav-menu.open {
+  right: 0; /* Make menu visible when open */
+}
+
+.nav-menu li {
+  font-weight: 700;
+}
+
+.nav-menu button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 .nav-Connect {
-  padding: 20px 40px;
-  border-radius: 50px;
+  padding: 10px 15px;
+  border-radius: 35px;
+  font-weight: 700;
   background-color: white;
   border: 3px solid rgb(159, 160, 159);
   color: black;
-  font-size: 22px;
+  font-size: 15px;
   cursor: pointer;
   transition: 0.5s;
 }
 
 .nav-Connect:hover {
   transform: scale(1.05);
+  background-color: orange;
 }
 
-.nav-mob-close {
-  display: none;
+.nav-Connect button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
+.nav-mob-close,
 .nav-mob-open {
   display: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1283px) {
+  .nav-Connect {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1136px) {
   .Navbar {
     margin: 20px 50px;
-  }
-
-  /* Fixed the incorrect "nav: .Connect" selector */
-  .nav-Connect {
-    display: none;
   }
 
   .nav-mob-open {
     display: block;
     position: fixed;
-    right: 30px;
-    top: 30px; /* Add positioning for better appearance */
+    right: 20px;
+    
   }
 
   .nav-mob-close {
     display: block;
-    position: fixed; /* Changed to fixed for correct positioning */
+    position: relative;
     top: 30px;
-    left: 290px;
-    width: 30px;
+    left: 160px;
+    
+    width: 10px;
   }
 
   .nav-menu {
@@ -72,19 +108,25 @@
     align-items: start;
     flex-direction: column;
     gap: 30px;
-    width: 350px;
+    width: 250px;
     top: 0;
     background: #1f0016;
     height: 100%;
     z-index: 2;
-    transition: right 0.5s;
-    right: -350px;
+    right: -350px; /* Keep menu hidden by default */
+    padding-top: 30px;
   }
 
   .nav-menu li {
     font-size: 30px;
     padding-left: 100px;
-    flex-direction: row;
-    gap: 20px;
+  }
+
+  .nav-menu.open {
+    right: 0; /* Show menu when open */
+  }
+
+  .nav-Connect {
+    display: none;
   }
 }

@@ -1,113 +1,131 @@
-/* Section Styling */
-.section {
-  padding: 60px 20px;
+.my-blogs {
+  background-color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.my-blogs h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.blog-card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  flex-direction: column;
+  align-items: stretch; /* Ensure children take full width */
+}
+
+.blog-card:hover{
+  
+  transform: translateY(-5px);
+background-color: whitesmoke;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a deeper shadow */
+}
+.blog-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.blog-excerpt {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.read-more-btn {
   background-color: black;
-}
-
-/* Header Styling */
-.top-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.top-header h1 {
-  font-size: 3.5rem;
   color: white;
-}
-
-/* Certificate Cards Container */
-.certificates-card {
-  display: grid; /* Changed to grid for better responsiveness */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
-  gap: 20px;
-}
-
-/* Individual Certificate Card */
-.certificate-card {
-  background-color: #2a2a2a;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  text-align: center;
-}
-
-/* Card Image */
-.certificate-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-/* Certificate Information */
-.certificate-info {
-  padding: 20px;
-}
-
-.certificate-info p {
-  font-size: 16px;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.certificate-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background: linear-gradient(270deg, #df8908 80%, #b415ff 100.2%);
-  color: black;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 14px;
+  border: none;
+  padding: 0.75rem 1.5rem; /* Adjust padding */
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: flex; /* Use flex to center text */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin-top: auto; /* Push the button to the bottom of the card */
 }
 
-.certificate-link:hover {
-  background-color: #0056b3;
+.read-more-btn:hover {
+  background-color: orange;
 }
 
-/* Hover Effect */
-.certificate-card:hover {
-  transform: rotate(5deg);
+.view-all-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem; /* Keep same padding for uniformity */
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin-top: 2rem; /* Keep margin for spacing */
 }
 
-.certificate-card:hover img {
-  transform: scale(1.05);
+.view-all-btn:hover {
+  background-color: orange;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .top-header h1 {
-    font-size: 55px;
-    white-space: nowrap;
-    margin-left: 150px;
-  
+  .my-blogs {
+    padding: 3rem 1rem;
   }
 
-  /* .certificate-card {
-    padding: 10px; /* Adjust padding for smaller screens */
-    /* grid-template-columns: repeat(2, 1fr); Two columns for medium screens */
-  
-  /* } */ 
-  /* Certificate Cards Container */
-.certificates-card {
-  padding-top: 2rem;
-  display: grid; /* Use grid layout */
-  grid-template-columns: repeat(2, 1fr); /* Two columns by default */
-  gap: 20px; /* Space between certificates */
-  width: 700px;
-  margin-left: 10px;
-}
-
-}
-
-@media (max-width: 576px) {
-  .certificate-info p {
-    font-size: 14px;
+  .my-blogs h2 {
+    font-size: 2rem;
   }
 
-  .certificate-link {
-    padding: 8px 16px;
-    font-size: 12px;
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card {
+    padding: 1.5rem;
+  }
+
+  .blog-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .blog-excerpt {
+    font-size: 0.9rem;
+  }
+
+  .blog-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .read-more-btn,
+  .view-all-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
 }

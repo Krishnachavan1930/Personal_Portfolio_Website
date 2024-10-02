@@ -1,74 +1,57 @@
-import React, { useEffect } from 'react';
-import './Certificate.css';
-import certi from '../../assets/cer1.png';
-import ITCORNERC from '../../assets/ITCORNERC.jpg';
-import DSA from '../../assets/DSA.jpg';
-import PYTHON from '../../assets/PYTHON.jpg';
-import gsap from 'gsap';
+import React from 'react';
+import './Certificate.css'; // Import the CSS file
 
-const certificates = [
-  {
-    id: 1,
-    image: DSA,
-    description: 'Data Structures and Algorithms Certification',
-    link: 'https://drive.google.com/your-link-for-dsa',
-  },
-  {
-    id: 2,
-    image: PYTHON,
-    description: 'Python Programming Certification',
-    link: 'https://drive.google.com/your-link-for-python',
-  },
-  {
-    id: 3,
-    image: ITCORNERC,
-    description: 'IT Corner Certification',
-    link: 'https://drive.google.com/your-link-for-itcornerc',
-  },
-  {
-    id: 4,
-    image: certi,
-    description: 'JavaScript Essentials Certification',
-    link: 'https://drive.google.com/your-link-for-js',
-  },
-];
-
-const Certificates = () => {
-  useEffect(() => {
-    gsap.fromTo(
-      '.certificate-card',
-      { opacity: 0, y: 50, scale: 0.8 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        stagger: 0.2,
-        duration: 1,
-        ease: 'bounce.out',
-      }
-    );
-  }, []);
+const MyBlogs = () => {
+  const blogs = [
+    {
+      title: "The Future of Web Development: What to Expect in 2024",
+      excerpt: "Explore the upcoming trends and technologies that will shape the web development landscape in 2024.",
+      date: "March 15, 2024",
+      readTime: "5 min read",
+      link: "/blog/future-of-web-development-2024"
+    },
+    {
+      title: "Mastering React Hooks: A Comprehensive Guide",
+      excerpt: "Dive deep into React Hooks and learn how to use them effectively in your projects.",
+      date: "February 28, 2024",
+      readTime: "8 min read",
+      link: "/blog/mastering-react-hooks"
+    },
+    {
+      title: "Building Scalable APIs with Node.js and Express",
+      excerpt: "Learn best practices for creating robust and scalable APIs using Node.js and Express.",
+      date: "February 10, 2024",
+      readTime: "6 min read",
+      link: "/blog/scalable-apis-nodejs-express"
+    },
+    {
+      title: "Optimizing Website Performance: A Developer's Guide",
+      excerpt: "Discover techniques and tools to improve your website's loading speed and overall performance.",
+      date: "January 22, 2024",
+      readTime: "7 min read",
+      link: "/blog/optimizing-website-performance"
+    }
+  ];
 
   return (
-    <section className="section" id="certificates">
-      <div className="top-header">
-        <h1>My Certificates</h1>
-      </div>
-      <div className="certificates-card">
-        {certificates.map((cert) => (
-          <div key={cert.id} className="certificate-card">
-            <img src={cert.image} alt={cert.description} />
-            <div className="certificate-info">
-              <p>{cert.description}</p>
-              <a href={cert.link} target="_blank" rel="noopener noreferrer" className="certificate-link">
-                View Certificate
-              </a>
+    <section className="my-blogs">
+      <h2>My Blog Posts</h2>
+      <div className="blog-grid">
+        {blogs.map((blog, index) => (
+          <article key={index} className="blog-card">
+            <h3>{blog.title}</h3>
+            <p className="blog-excerpt">{blog.excerpt}</p>
+            <div className="blog-meta">
+              <span className="blog-date">{blog.date}</span>
+              <span className="blog-read-time">{blog.readTime}</span>
             </div>
-          </div>
+            <a href={blog.link} className="read-more-btn">Read More</a>
+          </article>
         ))}
       </div>
+      <a href="/blog" className="view-all-btn">View All Posts</a>
     </section>
   );
 };
 
-export default Certificates;
+export default MyBlogs;

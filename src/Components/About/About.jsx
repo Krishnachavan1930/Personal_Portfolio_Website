@@ -1,158 +1,49 @@
-import React, { useState } from "react";
-import "./About.css"; // Import a separate CSS file for styles
-import pict from "../../assets/pass-pic.png";
+import React, { useRef } from 'react';
+import './About.css';  // Import the CSS file
 
-const About = () => {
-  const [activeTab, setActiveTab] = useState("Education");
+const Services = () => {
+  const servicesRef = useRef([]);
 
-  const openTab = (tabName) => {
-    setActiveTab(tabName);
-  };
+  const services = [
+    {
+      title: 'Web Design',
+      description: 'Creating visually appealing and user-friendly websites that leave a lasting impression.',
+      icon: '🎨',
+    },
+    {
+      title: 'Front-end Development',
+      description: 'Building responsive and interactive user interfaces using modern web technologies.',
+      icon: '💻',
+    },
+    {
+      title: 'Back-end Development',
+      description: 'Developing robust server-side applications and APIs to power your web solutions.',
+      icon: '🔧',
+    },
+  ];
 
   return (
-    <div className="about">
-      <div className="container">
-        <div className="row">
-          <div className="about-col-1">
-            <img src={pict} alt="user" className="pict" />
+    <section className="services">
+      <h2>My Services</h2>
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            ref={(el) => (servicesRef.current[index] = el)}
+            className="service-card"
+          >
+            <div className="service-icon">{service.icon}</div>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <button className="service-btn">Learn More</button>
           </div>
-          <div className="about-col-2">
-            <h1 className="sub-title">About Me</h1>
-            <p>
-              Welcome to my portfolio! I'm Krishna, a skilled and creative web
-              developer passionate about creating beautiful, responsive, and
-              user-friendly websites. With experience in a variety of web
-              projects, I specialize in delivering tailored solutions that
-              captivate audiences. Explore my portfolio to witness the
-              intersection of design and functionality.
-            </p>
-            <div className="tab-titles">
-              <p
-                className={`tab-links ${
-                  activeTab === "Education" ? "active-link" : ""
-                }`}
-                onClick={() => openTab("Education")}
-              >
-                Education
-              </p>
-              <p
-                className={`tab-links ${
-                  activeTab === "Experience" ? "active-link" : ""
-                }`}
-                onClick={() => openTab("Experience")}
-              >
-                Experience
-              </p>
-              <p
-                className={`tab-links ${
-                  activeTab === "Skills" ? "active-link" : ""
-                }`}
-                onClick={() => openTab("Skills")}
-              >
-                Skills
-              </p>
-            </div>
-            <div
-              className={`tab-contents ${
-                activeTab === "Education" ? "active-tab" : ""
-              }`}
-              id="Education"
-            >
-              <ul>
-                <li>
-                  <span>
-                    <b>BE Computer Engineering </b>
-                  </span>
-                  <br />
-                  Sandip Institute Of Technology And Research Centre, Nashik.
-                  <br />
-                  <i>(Savitribai phule Pune University)</i>.
-                </li>
-                <li>
-                  <span>
-                    <b>XII [HSC] </b>
-                  </span>
-                  <br />
-                  Badrinarayan Barwale Junior College, Jalna.
-                  <br />
-                  <i>(Babasaheb Ambedkar Marathwada University)</i>.
-                </li>
-                <li>
-                  <span>
-                    <b>X [CBSE] </b>
-                  </span>
-                  <br />
-                  Vivekananda English School, Partur.
-                  <br />
-                  <i>(Central Board Of Secondary Education, Delhi)</i>.
-                </li>
-              </ul>
-            </div>
-            <div
-              className={`tab-contents ${
-                activeTab === "Experience" ? "active-tab" : ""
-              }`}
-              id="Experience"
-            >
-              <ul>
-                <li>
-                  <span>
-                    <b>TechnoHacks EduTech</b>
-                  </span>
-                  <br />
-                  C++ Intern (2023)
-                </li>
-                <li>
-                  <span>
-                    <b>Class Representative</b>
-                  </span>
-                  <br />
-                  Second Year Computer Engineering (2023-2024)
-                </li>
-                <li>
-                  <span>
-                    <b>Cultural Head</b>
-                  </span>
-                  <br />
-                  Computer Engineering Students Association [TEAM-CESA]
-                </li>
-              </ul>
-            </div>
-            <div
-              className={`tab-contents ${
-                activeTab === "Skills" ? "active-tab" : ""
-              }`}
-              id="Skills"
-            >
-              <ul>
-                <li>
-                  <span>
-                    <b>UI/UX</b>
-                  </span>
-                  <br />
-                  Designing Web App Interfaces
-                </li>
-                <li>
-                  <span>
-                    <b>Frontend</b>
-                  </span>
-                  <br />
-                  Building Responsive Websites
-                </li>
-                <li>
-                  <span>
-                    <b>Backend</b>
-                  </span>
-                  <br />
-                  Developing Server-Side Logic
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+      <div className="more_button">
+        <a href="#" className="more_btn">View More</a>
+      </div>
+    </section>
   );
 };
 
-export default About;
+export default Services;

@@ -1,110 +1,114 @@
-/* General Section Styling */
-.projects-section {
-  padding: 80px 50px;
-  background-color: black;
-  color: #fff;
+.my-projects {
+  background-color: white;
+  padding: 4rem 2rem;
   text-align: center;
 }
 
-.section-title {
-  font-size: 60px;
-  margin-bottom: 60px;
-  font-weight: 600;
+.my-projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
-/* Grid for Project Cards */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
-/* Project Card Styling */
 .project-card {
-  background-color: #2a2a2a;
-  border: 2px solid transparent;
-  padding: 30px;
-  border-radius: 12px;
-  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
-  border: 2px solid #df8908;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+background-color: whitesmoke;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a deeper shadow */
 }
 
-/* Project Title and Description */
-.project-title {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #fff;
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
-.project-description {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #dcdcdc;
-  margin-bottom: 20px;
+.project-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
 }
 
-/* Links (GitHub and Live Website) */
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background-color: #e0e0e0;
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
 .project-links {
   display: flex;
-  gap: 15px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.project-links a {
-  color: #fff;
-  transition: color 0.3s ease;
+.github-link,
+.live-link {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
 
-.project-links a:hover {
-  color: #df8908;
+.github-link:hover,
+.live-link:hover {
+  background-color: orange;
 }
 
-/* Media Queries for Responsiveness */
+.fab,
+.fas {
+  margin-right: 0.5rem;
+}
+
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 45px;
-    margin-left: 179px;
-    font-weight: 900;
-    font-size: 54px;
+  .my-projects {
+    padding: 3rem 1rem;
+  }
+
+  .my-projects h2 {
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .github-link,
+  .live-link {
     width: 100%;
-  }
-  .projects-grid {
-    margin-left: 97px;
-    width: 500px;
-    grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
-  }
-
-  .project-card {
-    padding: 20px;
-  }
-
-  .project-title {
-    font-size: 24px;
-  }
-
-  .project-description {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 576px) {
-  .projects-grid {
-    grid-template-columns: 1fr; /* One column for smaller screens */
-    margin-left: 0; /* Reset margin */
-    width: 100%; /* Set width to 100% for mobile responsiveness */
-  }
-
-  .project-title {
-    font-size: 22px;
-  }
-
-  .project-description {
-    font-size: 15px;
+    justify-content: center;
   }
 }
